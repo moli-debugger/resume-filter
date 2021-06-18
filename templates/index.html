@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 160px;
+        height: 160px;
+        border: 1px solid #efefef;
+        border-radius: 50%;
+        box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+        text-align: center;
+        padding: 20px;
+        position: absolute;
+        opactiy: 0;
+    }
+
+    .item:nth-of-type(1)  { top: 60px; left: 80px; animation: pop-in 2.8s cubic-bezier(.17,.67,.33,.92); }
+    .item:nth-of-type(2)  { top: 205px; left: 247px; width: 140px; height: 140px; animation: pop-in 3.2s cubic-bezier(.17,.67,.33,.92); }
+    .item:nth-of-type(3)  { top: 40px; left: 300px; width: 110px; height: 110px; animation: pop-in 3.4s cubic-bezier(.17,.67,.33,.92); }
+    .item:nth-of-type(4)  { top: 28px; left: 462px; animation: pop-in 2.7s cubic-bezier(.17,.67,.33,.92); }
+    .item:nth-of-type(5)  { top: 240px; left: 438px; width: 110px; height: 110px; animation: pop-in 2.2s cubic-bezier(.17,.67,.33,.92);  }
+    .item:nth-of-type(6)  { top: 46px; left: 682px; width: 140px; height: 140px; animation: pop-in 1.8s cubic-bezier(.17,.67,.33,.92); }
+    .item:nth-of-type(7)  { top: 226px; left: 612px; width: 150px; height: 150px; animation: pop-in 2.8s cubic-bezier(.17,.67,.33,.92); }
+    .item:nth-of-type(8)  { top: 182px; left: 829px; animation: pop-in 1.6s cubic-bezier(.17,.67,.33,.92);}
+    .item:nth-of-type(9)  { top: 4px; left: 874px; width: 130px; height: 130px; animation: pop-in 1.2s cubic-bezier(.17,.67,.33,.92); }
+    /* */
+
+    /* Keyframes */
+    @keyframes pop-in {
+        0% { opacity: 0;transform: scale(0.1); }
+        100% { opacity: 1;transform: scale(1); }
+    }
+
+    @keyframes grow-shrink {
+        0% { transform: scale(0.99295); }
+        50% { transform: scale(0.99695); }
+        100% { transform: scale(1); }
+    }
+
+    @keyframes move-left {
+        0%  { transform: translateX(1000px); }
+        100% { transform: translateX(-1700px); }
+    }
+
+    @keyframes wave {
+        10%  { opacity: 1; }
+        50%  { opacity: 1; transform: translate3d(500px,10px,0px) scale(0.75); }
+        100% { opacity: 0; transform: translate3d(-120px,150px,0px) scale(0.1); }
+    }
+
+
+
+    /* Styling and such */
+    .content-wrapper {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 30px 0 150px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .item-wrapper {
+        height: 450px;
+        position: relative;
+        padding: 0 0 80px;
+
+    }
+
+    .section-header {
+        max-width: 750px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .source {
+        font-size: 14px;
+        font-family: 'Roboto', sans-serif;
+        margin: 10px 0 0;
+    }
+
+    .stand-out {
+        color: #9DB2C2;
+        font-size: 1.4em;
+        font-weight: bold;
+        line-height: 1;
+    }
+
+    .nothing {
+        background: #f6f9fc;
+        position: relative;
+        padding: 100px 0;
+    }
+    .nothing:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: -150px;
+        -webkit-transform: skewY(-8deg);
+        transform: skewY(-8deg);
+        background-color: #f6f9fc;
+        z-index: -1;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin: 0 0 10px;
+    }
+
+    h2 {
+        font-size: 28px;
+        text-align: center;
+        padding: 30px 0;
+    }
+
+    p {
+        font-size: 16px;
+        color: rgba(0,0,0,0.5);
+    }
+
+    a {
+        color: #0088cc;
+        text-decoration: none;
+    }
+
+    .item p {
+        font-size: 14px;
+    }
+    .custom-shape-divider-top-1623926391 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1623926391 svg {
+    position: relative;
+    display: block;
+    width: calc(249% + 1.3px);
+    height: 500px;
+}
+
+.custom-shape-divider-top-1623926391 .shape-fill {
+    fill: #FA4D56;
+}</style>
+<body>
+<section>
+    <div class="custom-shape-divider-top-1623926391">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+        </svg>
+    </div>
+</section>
+<section style="margin-top: 33%">
+    <h1 STYLE="margin-left: 40%">RESUME FILTER</h1>
+    <h2>UPLOAD THE APPLICANT RESUME HERE</h2>
+<form action = "http://localhost:5000/uploader" method = "POST"
+      enctype = "multipart/form-data" style="padding-left: 35%;margin-left:5%;margin-right:5%;background:#FA4D56"><br><br>
+
+    <input type = "file" name = "file" />
+    <input type = "submit"/><br><br><br>
+</form>
+</section>
+</body>
+<footer>
+    <section class="content-wrapper">
+        <header class="section-header">
+            <h1>Good information<br> leads to better decisions.</h1>
+            <p>And the most important thing to be thinking about<br> is whether or not you're marketing to these facts.</p>
+        </header>
+        <div class="item-wrapper">
+            <div class="item">
+                <p>You’re <span class="stand-out">279.64</span> times more likely to climb Mount Everest than click on a banner ad.</p>
+                <a class="source" href="http://www.businessinsider.com/its-more-likely-you-will-survive-a-plane-crash-or-win-the-lottery-than-click-a-banner-ad-2011-6" target="_blank">Business Insider</a>
+            </div>
+            <div class="item">
+                <p><span class="stand-out">88%</span> of online consumers are less likely to return to a site after a bad experience.</p>
+                <a class="source" href="https://econsultancy.com/blog/10936-site-speed-case-studies-tips-and-tools-for-improving-your-conversion-rate" target="_blank">Econsultancy</a>
+            </div>
+            <div class="item">
+                <p>First impressions are <span class="stand-out">94%</span> design-related.</p>
+                <a class="source" href="https://www.researchgate.net/publication/221516871_Trust_and_mistrust_of_online_health_sites" target="_blank">ResearchGate</a>
+            </div>
+            <div class="item">
+                <p>Inbound marketing delivers <span class="stand-out">54%</span> more leads into the funnel than traditional outbound leads.</p>
+                <a class="source" href="https://www.hubspot.com/why-go-hubspot" target="_blank">Hubspot</a>
+            </div>
+            <div class="item">
+                <p>Nearly <span class="stand-out">50%</span>of all B2B researchers are millennials.</p>
+                <a class="source" href="https://www.thinkwithgoogle.com/articles/the-changing-face-b2b-marketing.html" target="_blank">Google</a>
+            </div>
+            <div class="item">
+                <p>Judgments on website credibility are <span class="stand-out">75%</span> based on a website’s overall aesthetics.</p>
+                <a class="source" href="http://www.bcs.org/upload/pdf/ewic_hci09_paper66.pdf" target="_blank">BCS</a>
+            </div>
+            <div class="item">
+                <p>Companies are <span class="stand-out">3x</span> as likely to see a higher ROI on inbound marketing campaigns than on outbound
+                </p>
+                <a class="source" href="https://www.hubspot.com/why-go-hubspot">HubSpot</a>
+            </div>
+            <div class="item">
+                <p><span class="stand-out">90%</span> of B2B researchers who are online use search specifically to research business purchases.</p>
+                <a class="source" href="https://www.thinkwithgoogle.com/articles/the-changing-face-b2b-marketing.html" target="_blank">Google</a>
+            </div>
+            <div class="item">
+                <p><span class="stand-out">42%</span> of researchers use a mobile device during the B2B purchasing process.
+                </p>
+                <a class="source" href="https://www.thinkwithgoogle.com/articles/the-changing-face-b2b-marketing.html">Google</a>
+            </div>
+        </div>
+    </section>
+    <section class="nothing"><h2>Nothing to see here</h2></section>
+</footer>
+</html>
