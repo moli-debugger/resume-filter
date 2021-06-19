@@ -12,7 +12,10 @@ app = Flask(__name__)
 text=[]
 text_format=''
 DATE=[]
-Email=[]
+org=[]
+email=''
+
+
 def extraction(name):
     with open(name,'rb') as pdf_file:
         read_pdf = PyPDF2.PdfFileReader(pdf_file)
@@ -23,6 +26,7 @@ def extraction(name):
             text.append(page_content)
     return text
 def analysis(data):
+    global email
     nlp = spacy.load("en_core_web_sm")
     doc = nlp(data)
     p=displacy.render(doc, style="ent")
@@ -30,7 +34,8 @@ def analysis(data):
         if(i.label_=='DATE'):
             DATE.append(i)
         if(i.label_=="ORG"):
-            Email.append(i)
+            org.append(i)
+    email=re.findall(r'\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b', data,re.I)
     return p
 
 
@@ -49,12 +54,11 @@ def upload_file():
         for text_data in data:
            text_format=''+text_data
         p=analysis(text_format)
-
         return render_template("uploader.html")
 
 @app.route('/date')
 def date():
-    return render_template("uploader.html",DATE=DATE,msg=Email)
+    return render_template("uploader.html",DATE=DATE,msg=org,email=email)
 
 
 

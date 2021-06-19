@@ -291,10 +291,6 @@
 <section style="margin-top: 50%">
 <div>
 
-<form method="get" action="date">
-    <button name="date">123</button>
-</form>
-
     <form  action="date" method="get">
         <button class="btn" name="date" style="color:  #FA4D56;margin-left:72vh">Extract data</button></form>
 
@@ -303,7 +299,8 @@
     <h3 class="made_by">Made with ♡</h3></section>
 <section style="alignment: center" >
 <strong>DATE : </strong> {{ DATE | safe }}<br>
-<strong>ORGANATION,COMPANY,PERSON : </strong>    {{ msg | safe }}
+<strong>ORGANATION,COMPANY,PERSON : </strong>    {{ msg | safe }} <br>
+<strong>Email:</strong>    {{ email| safe }}
 </section>
 </body>
 </html>
